@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBMovers</title>
+    <link rel="stylesheet" href="home.css">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">JBMovers | A Moving Company</div>
+                <ul>
+                    <li><a href="https://forms.gle/d3pNAxYRSncMhjcV6" target="_blank">Free Quote!</a></li>
+                    <li><a href="spanish.html">Español</a></li>
+                    <li><a href="tel:7542078650">Call Us Now!</a></li>
+                    <li><a href="https://g.co/kgs/CWC2Jxg" target="_blank">Leave us a Review!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Relax and Call Us</h1>
+            <p>The company was created on October 27, 2015, by its president Julio Barazarte, with the purpose of creating a company that would support his family made up of a wife and two daughters, taking into account from the beginning that he would have to work very hard. to be able to compete with other companies that were dedicated to the same thing. But convinced that he would be successful in his goal of forming a moving company that offered a personalized and responsible service for its clients.</p>
+        </div>
+    </section>
+
+    
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2>Meet the Team</h2>
+            <div class="team-members">
+                <!-- Repeat this structure for all 7 team members -->
+                <div class="team-member">
+                    <img src="images/CEO.jpg" alt="Team Member 1">
+                    <h3>Julio Barazarte</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/Rony2.jpg" alt="Team Member 1">
+                    <h3>Rony</h3>
+                    <p>Truck Organizer & Heavy Lifter</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/RobinsonMontenegro.jpg" alt="Team Member 1">
+                    <h3>Robinson Montenegro</h3>
+                    <p>In Charge of Boxes</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/DiaBriVi.jpeg" alt="Team Member 1">
+                    <h3>Diana, Brigida, Victoria</h3>
+                    <p>Social Media | Phone Service</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/Luis.jpg" alt="Team Member 1">
+                    <h3>Luis</h3>
+                    <p>In Charge of Bathrooms</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/Jesus.jpg" alt="Team Member 1">
+                    <h3>Jesus</h3>
+                    <p>In Charge of Bedrooms</p>
+                </div>
+                <div class="team-member">
+                    <img src="images/Santi.jpg" alt="Team Member 1">
+                    <h3>Santiago Defelice</h3>
+                    <p>Website Developer</p>
+                </div>
+                
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <h2>This is How We Do It</h2>
+            <div class="process-images">
+                <!-- Repeat this structure for all 6 process images -->
+                <div class="process-image">
+                    <img src="images/HowWeDoIt.jpg" alt="Moving Process 1">
+                </div>
+                <div class="process-image">
+                    <img src="images/HowWeDoit2.jpg" alt="Moving Process 1">
+                </div>
+                <div class="process-image">
+                    <img src="images/HowWeDoIt4.jpg" alt="Moving Process 1">
+                </div>
+                <div class="process-image">
+                    <img src="images/HowWeDoIt8.jpg" alt="Moving Process 1">
+                </div>
+                <div class="process-image">
+                    <img src="images/WorkersMoving.jpg" alt="Moving Process 1">
+                </div>
+                <!-- ... -->
+            </div>
+        </div>
+    </section>
+
+   <!-- <section class="reviews"> 
+        <div class="container">
+            <h2>What Our Customers Say!</h2>
+            <div class="review-carousel">
+                placeholder for reviews
+                <div id="google-reviews-container">
+                    Google reviews will be loaded here
+                </div>
+                <button id="prev-review" class="review-nav">&lt;</button>
+                <button id="next-review" class="review-nav">&gt;</button>
+            </div>
+            <p>
+                <a href="https://www.google.com/maps/place/Jbmovers/@25.927167,-80.6244771,10z/data=!3m1!4b1!4m6!3m5!1s0x881cbad40919e081:0x4b5e80ebe73c30fe!8m2!3d25.92754!4d-80.294818!16s%2Fg%2F11y6gdg7yb?entry=ttu" target="_blank">Read more reviews or leave your own here!</a>
+            </p>
+        </div>
+    </section> -->
+
+    <section class="social">
+        <div class="container">
+            <h2>Connect With Us</h2>
+            <p>
+                <a href="https://www.instagram.com/jbmovers/" target="_blank">Follow us on Instagram</a>
+                |
+                <a href="https://forms.gle/d3pNAxYRSncMhjcV6" target="_blank">Fill out our Inventory Form</a>
+            </p>
+        </div>
+    </section>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF4N674mZgkHn0tGLuVCSnL5h5s-FQOlM&libraries=places"></script>
+
+    <script>
+        let currentReviewIndex = 0;
+
+        function getPlaceReviews() {
+          const placeId = 'ChIJ85p6XvwN_IgRBmBJ3b9jFYQ'; // Replace with your Google Place ID
+          const service = new google.maps.places.PlacesService(document.createElement('div'));
+        
+          service.getDetails({
+            placeId: placeId,
+            fields: ['reviews']
+          }, (place, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              displayReviews(place.reviews);
+              setUpCarousel();
+            }
+            else{
+                const container = document.getElementById('google-reviews-container');
+                container.innerHTML = '<p class="error-message">Unable to load reviews at this time, please try again later.</p>'
+            }
+          });
+        }
+        
+        function displayReviews(reviews) {
+          const container = document.getElementById('google-reviews-container');
+          container.innerHTML = '';
+        
+
+          reviews.forEach((review, index) => {
+            const reviewElement = document.createElement('div');
+            reviewElement.classList.add('review');
+            if (index==0) reviewElement.classList.add('active');
+            reviewElement.innerHTML = `
+              <p><strong>${review.author_name}</strong></p>
+              <p>Rating: ${'★'.repeat(review.rating)}${'☆'.repeat(5-review.rating)}</p>
+              <p>${review.text}</p>
+            `;
+            container.appendChild(reviewElement);
+          });
+        }
+
+        function setUpCarousel() {
+            const prevButton = document.getElementById('prev-review');
+            const nextButton = document.getElementById('next-review');
+            const reviews = document.querySelectorAll('.review');
+
+            prevButton.addEventListener('click', ()=> changeReview(-1));
+            nextButton.addEventListener('click', ()=> changeReview(1));
+
+            function changeReview(direction) {
+                reviews[currentReviewIndex].classList.remove('active');
+                currentReviewIndex = (currentReviewIndex + direction + reviews.length) % reviews.length;
+                reviews[currentReviewIndex].classList.add('active');
+            }
+        }
+        
+        // Call the function when the page loads
+        window.onload = getPlaceReviews;
+        </script>
+</body>
+</html>
